@@ -45,7 +45,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
     -- colorscheme
-    -- use "folke/tokyonight.nvim"
+    use "folke/tokyonight.nvim"
     use "catppuccin/nvim"
 
     -- completion
@@ -82,6 +82,12 @@ return packer.startup(function(use)
     -- Bufferline
     use "akinsho/bufferline.nvim"
     use "moll/vim-bbye"
+
+    -- Lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     -- ToggleTerm
     use "akinsho/toggleterm.nvim"
