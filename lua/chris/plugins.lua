@@ -64,6 +64,7 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
+    use "simrat39/rust-tools.nvim"
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
