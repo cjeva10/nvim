@@ -45,8 +45,7 @@ local M = {
                 -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
             },
         })
-    build = function()
-        vim.cmd.colorscheme "catppuccin"
+        vim.cmd([[colorscheme catppuccin]])
     end,
 }
 
