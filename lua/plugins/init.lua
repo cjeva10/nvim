@@ -7,13 +7,13 @@ return {
     { "vyperlang/vim-vyper", lazy = true },
 
     -- alpha greeter
-    {
-        'goolord/alpha-nvim',
-        lazy = true,
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.dashboard'.config)
-        end
-    },
+    -- {
+    --     'goolord/alpha-nvim',
+    --     lazy = true,
+    --     config = function ()
+    --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    --     end
+    -- },
 
     -- R
     { "jalvesaq/Nvim-R", lazy = true },

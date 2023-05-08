@@ -19,21 +19,29 @@ return {
 
             local mappings = {
                 ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
-                ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-                ["b"] = {
-                    "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer=false})<cr>",
-                    "Buffers",
-                },
+                -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
                 ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
                 ["w"] = { "<cmd>w!<CR>", "Save" },
                 ["q"] = { "<cmd>q!<CR>", "Quit" },
                 ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
-                ["f"] = {
-                    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
-                    "Find files",
+
+                f = {
+                    name = "Telescope",
+                    f = {
+                        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
+                        "Find files",
+                    },
+                    b = {
+                        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes')<cr>",
+                        "Buffers",
+                    },
+                    g = {
+                        "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes'))<cr>",
+                        "Find Text"
+                    },
+                    p = { "<cmd>Telescope projects<cr>", "Projects" },
                 },
-                ["F"] = { "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes'))<cr>", "Find Text" },
-                ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+                ["F"] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
                 ["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
                 ["h"] = { "<cmd>split<cr>", "Horizontal Split" },
 
