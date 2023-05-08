@@ -26,7 +26,7 @@ local options = {
     tabstop = 4,                             -- insert 4 spaces for a tab
     cursorline = false,                      -- highlight the current line
     -- customize cursor shape and style
-	  guicursor="n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175", 
+    guicursor="n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175", 
     number = true,                           -- set numbered lines
     relativenumber = true,                   -- set relative numbered lines
     numberwidth = 4,                         -- set number column width to 2 {default 4}
@@ -48,3 +48,4 @@ vim.opt.iskeyword:append "-"                           -- hyphenated words recog
 vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
+vim.api.nvim_command('let g:c_syntax_for_h=1')

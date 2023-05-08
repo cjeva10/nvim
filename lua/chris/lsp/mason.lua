@@ -1,8 +1,12 @@
 local servers = {
-	"sumneko_lua",
+	"luau_lsp",
 	"pyright",
 	"jsonls",
     "rust_analyzer",
+    "quick_lint_js",
+    "jdtls",
+    "clangd",
+    "gopls",
 }
 
 local settings = {

@@ -3,6 +3,19 @@ if not status_ok then
   return
 end
 
+-- local highlights = require("nord").bufferline.highlights({
+--     italic = true,
+--     bold = true,
+-- })
+--
+-- require("bufferline").setup({
+--     options = {
+--         separator_style = "thin",
+--     },
+--     highlights = highlights,
+-- })
+
+
 bufferline.setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -37,25 +50,25 @@ bufferline.setup {
     tab_size = 21,
     diagnostics = false, -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
-    -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-    --   return "("..count..")"
-    -- end,
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      return "("..count..")"
+    end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
-    -- custom_filter = function(buf_number)
-    --   -- filter out filetypes you don't want to see
-    --   if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-    --     return true
-    --   end
-    --   -- filter out by buffer name
-    --   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-    --     return true
-    --   end
-    --   -- filter out based on arbitrary rules
-    --   -- e.g. filter out vim wiki buffer from tabline in your work repo
-    --   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-    --     return true
-    --   end
-    -- end,
+    custom_filter = function(buf_number)
+      -- filter out filetypes you don't want to see
+      if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
+        return true
+      end
+      -- filter out by buffer name
+      if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+        return true
+      end
+      -- filter out based on arbitrary rules
+      -- e.g. filter out vim wiki buffer from tabline in your work repo
+      if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
+        return true
+      end
+    end,
     offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
     show_buffer_icons = true,
     show_buffer_close_icons = true,
@@ -74,7 +87,7 @@ bufferline.setup {
   },
   highlights = {
     fill = {
-      fg = { attribute = "fg", highlight = "#ff0000" },
+      fg = { attribute = "fg", highlight = "TabLine" },
       bg = { attribute = "bg", highlight = "TabLine" },
     },
     background = {
@@ -83,9 +96,8 @@ bufferline.setup {
     },
 
     -- buffer_selected = {
-    --   fg = {attribute='fg',highlight='#ff0000'},
-    --   bg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
+    --   fg = {attribute='fg',highlight='TabLineSel'},
+    --   bg = {attribute='bg',highlight='TabLineSel'},
     --   },
     buffer_visible = {
       fg = { attribute = "fg", highlight = "TabLine" },
@@ -104,7 +116,7 @@ bufferline.setup {
     --   fg = {attribute='fg',highlight='TabLineSel'},
     --   bg ={attribute='bg',highlight='TabLineSel'}
     --   },
-
+    --
     tab_selected = {
       fg = { attribute = "fg", highlight = "Normal" },
       bg = { attribute = "bg", highlight = "Normal" },
@@ -114,7 +126,6 @@ bufferline.setup {
       bg = { attribute = "bg", highlight = "TabLine" },
     },
     tab_close = {
-      -- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
       fg = { attribute = "fg", highlight = "TabLineSel" },
       bg = { attribute = "bg", highlight = "Normal" },
     },

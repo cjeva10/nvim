@@ -82,7 +82,7 @@ local mappings = {
     ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["b"] = {
-        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer=false})<cr>",
         "Buffers",
     },
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -90,10 +90,10 @@ local mappings = {
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["f"] = {
-        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
         "Find files",
     },
-    ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+    ["F"] = { "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes'))<cr>", "Find Text" },
     ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
     ["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
     ["h"] = { "<cmd>split<cr>", "Horizontal Split" },
