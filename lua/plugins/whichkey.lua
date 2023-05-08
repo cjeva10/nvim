@@ -31,6 +31,10 @@ return {
                         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
                         "Find files",
                     },
+                    h = {
+                        "<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes'))<cr>",
+                        "Recent files",
+                    },
                     b = {
                         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes')<cr>",
                         "Buffers",
