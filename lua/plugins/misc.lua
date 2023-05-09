@@ -8,7 +8,7 @@ return {
         end,
     },
     -- comment
-    { "numToStr/Comment.nvim", lazy = true },
+    { "numToStr/Comment.nvim", event = { "BufReadPre", "BufNewFile" }, },
 
     -- vim-vyper
     { "vyperlang/vim-vyper",   lazy = true },
@@ -27,7 +27,7 @@ return {
     -- Better buffer closing actions. Available via the buffers helper.
 	{
 		"kazhala/close-buffers.nvim",
-        lazy = true,
+        event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			preserve_window_layout = { "this", "nameless" },
 		},
