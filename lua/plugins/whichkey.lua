@@ -1,13 +1,13 @@
 return {
     {
         "folke/which-key.nvim",
-        keys = {"<leader>", "g"},
+        keys = { "<leader>", "g" },
         config = function()
             local status_ok, wk = pcall(require, "which-key")
             if not status_ok then
                 return
             end
-            wk.setup {}
+            wk.setup({})
 
             local opts = {
                 mode = "n", -- NORMAL mode
@@ -21,65 +21,20 @@ return {
             local buffers = require("helpers.buffers")
 
             local mappings = {
-                ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
-                ["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
+                ["c"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
+                -- ["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
                 ["w"] = { "<cmd>w!<CR>", "Save" },
                 ["q"] = { "<cmd>q!<CR>", "Quit" },
-                ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
 
-                b = {
-                    name = "Buffers",
-                    d = { buffers.delete_this, "Delete current buffer" },
-                    o = { buffers.delete_others, "Delete other buffers" },
-                    a = { buffers.delete_all, "Delete all buffers" },
-                },
+                d = { name = "Delete" },
 
-                f = {
-                    name = "Telescope",
-                    f = {
-                        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes'))<cr>",
-                        "Find files",
-                    },
-                    h = {
-                        "<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes'))<cr>",
-                        "Recent files",
-                    },
-                    b = {
-                        "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes')<cr>",
-                        "Buffers",
-                    },
-                    g = {
-                        "<cmd>lua require('telescope.builtin').live_grep(require('telescope.themes'))<cr>",
-                        "Find Text"
-                    },
-                    p = { "<cmd>Telescope projects<cr>", "Projects" },
-                },
+                f = { name = "Telescope" },
                 ["F"] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
                 ["v"] = { "<cmd>vsplit<cr>", "Vertical Split" },
                 ["h"] = { "<cmd>split<cr>", "Horizontal Split" },
 
                 g = {
                     name = "Git",
-                    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-                    j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-                    k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-                    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-                    p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-                    r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-                    R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-                    s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-                    S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Buffer" },
-                    u = {
-                        "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-                        "Undo Stage Hunk",
-                    },
-                    o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-                    b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-                    c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-                    d = {
-                        "<cmd>Gitsigns diffthis HEAD<cr>",
-                        "Diff",
-                    },
                 },
 
                 l = {
@@ -147,11 +102,11 @@ return {
             }
 
             local vmappings = {
-                ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle.linewise(vim.fn.visualmode())<CR>", "Comment" },
+                ["c"] = { '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment" },
             }
 
             wk.register(mappings, opts)
             wk.register(vmappings, vopts)
         end,
-    }
+    },
 }
