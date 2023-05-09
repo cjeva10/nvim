@@ -21,7 +21,7 @@ return {
             local mappings = {
                 ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
                 -- ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-                ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+                ["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
                 ["w"] = { "<cmd>w!<CR>", "Save" },
                 ["q"] = { "<cmd>q!<CR>", "Quit" },
                 ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
