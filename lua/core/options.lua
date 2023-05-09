@@ -49,3 +49,7 @@ vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the curre
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
 
 vim.api.nvim_command('let g:c_syntax_for_h=1')
+
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
