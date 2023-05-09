@@ -2,7 +2,7 @@
 
 local M = {
     "hrsh7th/nvim-cmp",
-    lazy = true,
+    event = "InsertEnter",
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-cmdline",
@@ -145,4 +145,4 @@ local M = {
         end,
     }
 
-return { M }
+return M

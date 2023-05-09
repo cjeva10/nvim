@@ -1,6 +1,6 @@
 -- load options and keymaps before plugins
-require("options")
-require("keymaps")
+require("core.options")
+require("core.keymaps")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then

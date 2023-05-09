@@ -2,6 +2,7 @@ return {
     "nvim-tree/nvim-tree.lua",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
+    cmd = "NvimTreeToggle",
     config = function()
         local status_ok, nvim_tree = pcall(require, "nvim-tree")
         if not status_ok then

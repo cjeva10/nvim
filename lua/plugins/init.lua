@@ -1,7 +1,7 @@
 -- this file just loads the leftover plugins that we don't have a custom config for
 return {
     -- comment
-    { "numToStr/Comment.nvim", lazy = true },
+    { "numToStr/Comment.nvim", keys = { "<leader>/" } },
 
     -- vim-vyper
     { "vyperlang/vim-vyper", lazy = true },
