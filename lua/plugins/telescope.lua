@@ -42,15 +42,23 @@ return {
             pcall(telescope.load_extension, "fzf")
 
             local map = require("helpers.keys").map
-			map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recently opened")
-			map("n", "<leader>fb", require("telescope.builtin").buffers, "Open buffers")
-			map("n", "<leader>f/", require("telescope.builtin").current_buffer_fuzzy_find, "Search current buffer")
-			map("n", "<leader>ff", require("telescope.builtin").find_files, "Files")
-			map("n", "<leader>fh", require("telescope.builtin").help_tags, "Help")
-			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
-			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
-			map("n", "<leader>fd", require("telescope.builtin").diagnostics, "Diagnostics")
-			map("n", "<leader>fk", require("telescope.builtin").keymaps, "Search keymaps")
+            local tb = require("telescope.builtin")
+			map("n", "<leader>/", tb.current_buffer_fuzzy_find, "Search current buffer")
+
+			map("n", "<leader>fb", tb.buffers, "Open buffers")
+            map("n", "<leader>fc", tb.git_branches, "Checkout git branches")
+			map("n", "<leader>fd", tb.diagnostics, "Diagnostics")
+			map("n", "<leader>ff", tb.find_files, "Search files")
+			map("n", "<leader>fg", tb.live_grep, "Grep")
+			map("n", "<leader>fr", tb.oldfiles, "Recently opened files")
+			map("n", "<leader>fw", tb.grep_string, "Find current word")
+
+            map("n", "<leader>sc", tb.commands, "Commands")
+            map("n", "<leader>sh", tb.help_tags, "Find Help")
+            map("n", "<leader>sk", tb.keymaps, "Keymaps")
+            map("n", "<leader>sm", tb.man_pages, "Man Pages")
+            map("n", "<leader>sr", tb.registers, "Registers")
+            map("n", "<leader>ss", tb.colorscheme, "Colorscheme")
 		end,
 	},
 }
