@@ -128,7 +128,7 @@ return {
                 },
             }
 
-            vopts = {
+            local vopts = {
                 mode = "v", -- VISUAL mode
                 prefix = "<leader>",
                 buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -137,7 +137,7 @@ return {
                 nowait = true, -- use `nowait` when creating keymaps
             }
 
-            vmappings = {
+            local vmappings = {
                 ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle.linewise(vim.fn.visualmode())<CR>", "Comment" },
             }
 
