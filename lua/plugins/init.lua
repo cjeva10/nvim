@@ -8,7 +8,7 @@ return {
         end,
     },
     -- comment
-    { "numToStr/Comment.nvim", keys = { "<leader>/" } },
+    { "numToStr/Comment.nvim", lazy = true },
 
     -- vim-vyper
     { "vyperlang/vim-vyper",   lazy = true },

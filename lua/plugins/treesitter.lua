@@ -1,6 +1,7 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
+        event = "BufEnter",
         config = function()
             require("nvim-treesitter.configs").setup {
               ensure_installed = {
@@ -25,6 +26,9 @@ return {
               },
               indent = { enable = true, disable = { "yaml" } },
             }
+        end,
+        build = function()
+            pcall(require("nvim-treesitter.install").update({ with_sync = true}))
         end,
     }
 }
