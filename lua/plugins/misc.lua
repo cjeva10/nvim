@@ -23,4 +23,13 @@ return {
 
     -- R
     { "jalvesaq/Nvim-R", lazy = true },
+
+    -- Better buffer closing actions. Available via the buffers helper.
+	{
+		"kazhala/close-buffers.nvim",
+        lazy = true,
+		opts = {
+			preserve_window_layout = { "this", "nameless" },
+		},
+	},
 }

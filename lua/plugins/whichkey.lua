@@ -18,12 +18,21 @@ return {
                 nowait = true, -- use `nowait` when creating keymaps
             }
 
+            local buffers = require("helpers.buffers")
+
             local mappings = {
                 ["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<CR>", "Comment" },
                 ["e"] = { "<cmd>NeoTreeFocusToggle<cr>", "Explorer" },
                 ["w"] = { "<cmd>w!<CR>", "Save" },
                 ["q"] = { "<cmd>q!<CR>", "Quit" },
                 ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
+
+                b = {
+                    name = "Buffers",
+                    d = { buffers.delete_this, "Delete current buffer" },
+                    o = { buffers.delete_others, "Delete other buffers" },
+                    a = { buffers.delete_all, "Delete all buffers" },
+                },
 
                 f = {
                     name = "Telescope",

@@ -69,12 +69,6 @@ map("n", "<C-q>", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>")
 -- close current window
 map("n", "<C-x>", "<cmd>q!<cr>")
 
--- Deleting buffers
-local buffers = require("helpers.buffers")
-map("n", "<leader>db", buffers.delete_this, "Current buffer")
-map("n", "<leader>do", buffers.delete_others, "Other buffers")
-map("n", "<leader>da", buffers.delete_all, "All buffers")
-
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
