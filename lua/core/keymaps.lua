@@ -1,15 +1,4 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
--- Remap space as leader key
--- NOTE: all leader rebinds are in whichkey.lua
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local map = require("helpers.keys").map
 
 -- Modes
 --   normal_mode = "n",
@@ -21,61 +10,71 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+map("n", "<C-h>", "<C-w>h")
+map("n", "<C-j>", "<C-w>j")
+map("n", "<C-k>", "<C-w>k")
+map("n", "<C-l>", "<C-w>l")
 
 -- helix-like g motions
-keymap("n", "gh", "g^", opts)
-keymap("n", "gl", "g$", opts)
-keymap("n", "ge", "G", opts)
+map("n", "gh", "g^")
+map("n", "gl", "g$")
+map("n", "ge", "G")
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map("n", "<C-Up>", ":resize -2<CR>")
+map("n", "<C-Down>", ":resize +2<CR>")
+map("n", "<C-Left>", ":vertical resize -2<CR>")
+map("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+map("n", "<S-l>", ":bnext<CR>")
+map("n", "<S-h>", ":bprevious<CR>")
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
+map("n", "<A-k>", "<Esc>:m .-2<CR>==gi")
 
 -- Insert --
 -- Press jk fast to exit insert mode 
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+map("i", "jk", "<ESC>")
+map("i", "kj", "<ESC>")
 
 -- Visual --
 -- Stay in indent mode when moving indents
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+map("v", "<", "<gv")
+map("v", ">", ">gv")
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+map("v", "<A-j>", ":m .+1<CR>==")
+map("v", "<A-k>", ":m .-2<CR>==")
+map("v", "p", '"_dP')
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+map("x", "J", ":move '>+1<CR>gv-gv")
+map("x", "K", ":move '<-2<CR>gv-gv")
+map("x", "<A-j>", ":move '>+1<CR>gv-gv")
+map("x", "<A-k>", ":move '<-2<CR>gv-gv")
 
 -- Terminal --
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+map("t", "<C-h>", "<C-\\><C-N><C-w>h")
+map("t", "<C-j>", "<C-\\><C-N><C-w>j")
+map("t", "<C-k>", "<C-\\><C-N><C-w>k")
+map("t", "<C-l>", "<C-\\><C-N><C-w>l")
 
 -- close current buffer
-keymap("n", "<C-q>", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>", opts)
+map("n", "<C-q>", "<cmd>bp<bar>sp<bar>bn<bar>bd<cr>")
 
 -- close current window
-keymap("n", "<C-x>", "<cmd>q!<cr>", opts)
+map("n", "<C-x>", "<cmd>q!<cr>")
+
+-- Deleting buffers
+local buffers = require("helpers.buffers")
+map("n", "<leader>db", buffers.delete_this, "Current buffer")
+map("n", "<leader>do", buffers.delete_others, "Other buffers")
+map("n", "<leader>da", buffers.delete_all, "All buffers")
+
+-- Navigate buffers
+map("n", "<S-l>", ":bnext<CR>")
+map("n", "<S-h>", ":bprevious<CR>")
