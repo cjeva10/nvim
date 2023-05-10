@@ -11,7 +11,7 @@ return {
     { "numToStr/Comment.nvim", event = { "BufReadPre", "BufNewFile" }, },
 
     -- vim-vyper
-    { "vyperlang/vim-vyper",   lazy = true },
+    { "vyperlang/vim-vyper",   lazy = true, ft = "vyper" },
 
     -- alpha greeter
     {
@@ -22,7 +22,7 @@ return {
     },
 
     -- R
-    { "jalvesaq/Nvim-R", lazy = true },
+    { "jalvesaq/Nvim-R", lazy = true, ft = "r" },
 
     -- Better buffer closing actions. Available via the buffers helper.
 	{
@@ -70,5 +70,5 @@ return {
                 "nvim-treesitter/nvim-treesitter",
                 "hrsh7th/nvim-cmp",
             },
-    }
+    },
 }
