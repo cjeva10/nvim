@@ -37,6 +37,10 @@ end
 local opts = {}
 
 for _, server in pairs(servers) do
+    if server == "rust_analyzer" then
+        print("skipping rust_analyzer")
+        return
+    end
     opts = {
         on_attach = require("plugins.lsp.handlers").on_attach,
         capabilities = require("plugins.lsp.handlers").capabilities,
