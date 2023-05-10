@@ -7,7 +7,15 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        require("neo-tree").setup()
+        require("neo-tree").setup({
+            filesystem = {
+                filtered_items = {
+                    visible = true,
+                    hide_dotfiles = false,
+                    hide_gitignored = true,
+                }
+            }
+        })
         require("helpers.keys").map({ "n", "v" }, "<leader>e", "<cmd>NeoTreeRevealToggle<cr>", "File Tree")
     end,
 }
