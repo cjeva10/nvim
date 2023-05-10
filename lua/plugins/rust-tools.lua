@@ -168,6 +168,8 @@ return {
               -- these override the defaults set by rust-tools.nvim
               -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
               server = {
+                on_attach = require("plugins.lsp.handlers").on_attach,
+                capabilities = require("plugins.lsp.handlers").capabilities,
                 -- standalone file support
                 -- setting it to false may improve startup time
                 standalone = true,
