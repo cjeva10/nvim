@@ -62,15 +62,16 @@ end
 
 local function lsp_keymaps(bufnr)
 	local lsp_map = require("helpers.keys").lsp_map
+    local tb = require("telescope.builtin")
 
 	lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
-	lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
+	lsp_map("gr", tb.lsp_references, bufnr, "Goto References")
 	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
 	lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
 	lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code Action")
-	lsp_map("<leader>ld", vim.diagnostic.setloclist, bufnr, "Document Diagnostics")
+	lsp_map("<leader>ld", tb.diagnostics, bufnr, "Document Diagnostics")
 	lsp_map("<leader>lf", vim.lsp.buf.format, bufnr, "Format")
 	lsp_map("<leader>li", "<cmd>LspInfo<cr>", bufnr, "Info")
 	lsp_map("<leader>lI", "<cmd>LspInstall<cr>", bufnr, "Lsp Install")
@@ -78,8 +79,9 @@ local function lsp_keymaps(bufnr)
 	lsp_map("<leader>lk", vim.diagnostic.goto_prev, bufnr, "Previous Diagnostic")
 	lsp_map("<leader>ll", vim.lsp.codelens.run, bufnr, "CodeLens Action")
 	lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
-	lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
-	lsp_map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, bufnr, "Workspace Symbols")
+	lsp_map("<leader>lR", "<cmd>LspRestart<cr>", bufnr, "Lsp Restart")
+	lsp_map("<leader>ls", tb.lsp_document_symbols, bufnr, "Document symbols")
+	lsp_map("<leader>lS", tb.lsp_dynamic_workspace_symbols, bufnr, "Workspace Symbols")
 	lsp_map("<leader>lt", vim.lsp.buf.type_definition, bufnr, "Type definition")
 end
 
