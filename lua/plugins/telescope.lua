@@ -22,7 +22,6 @@ return {
 
 					mappings = {
 						i = {
-
 							["<C-u>"] = actions.preview_scrolling_up,
 							["<C-d>"] = actions.preview_scrolling_down,
 						},
@@ -32,8 +31,15 @@ return {
 				extensions = {
 					media_files = {
 						-- filetypes whitelist
-						-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-						filetypes = { "png", "webp", "jpg", "jpeg" },
+						filetypes = {
+                            "jpeg",
+                            "jpg",
+                            "mp4",
+                            "pdf",
+                            "png",
+                            "webp",
+                            "webm"
+                        },
 						find_cmd = "rg", -- find command (defaults to `fd`)
 					},
 				},
