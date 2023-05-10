@@ -37,8 +37,8 @@ end
 local opts = {}
 
 for _, server in pairs(servers) do
+    -- rust analyzer is handled by rust-tools
     if server == "rust_analyzer" then
-        print("skipping rust_analyzer")
         return
     end
     opts = {
