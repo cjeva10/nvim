@@ -31,6 +31,10 @@ return {
               },
             }
             rt.setup(opts)
+
+            -- additional rust-tools keymaps
+            local map = require("helpers.keys").map
+            map("n", "<leader>rc", rt.open_cargo_toml.open_cargo_toml, "Open Cargo.toml")
         end,
     }
 }
