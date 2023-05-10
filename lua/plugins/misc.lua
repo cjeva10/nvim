@@ -27,10 +27,18 @@ return {
     -- Better buffer closing actions. Available via the buffers helper.
 	{
 		"kazhala/close-buffers.nvim",
-        event = { "BufReadPre", "BufNewFile" },
+        event = { "VeryLazy" },
 		opts = {
 			preserve_window_layout = { "this", "nameless" },
 		},
+        config = function()
+            -- better buffer deletion
+            local buffers = require("helpers.buffers")
+            local map = require("helpers.keys").map
+            map("n", "<leader>db", buffers.delete_this, "Current buffer")
+            map("n", "<leader>do", buffers.delete_others, "Other buffers")
+            map("n", "<leader>da", buffers.delete_all, "All buffers")
+        end,
 	},
 
     -- autopairs
@@ -46,8 +54,8 @@ return {
         event = { "InsertEnter" },
         config = function()
             require('tabout').setup {
-                tabkey = 'fj', -- key to trigger tabout, set to an empty string to disable
-                backwards_tabkey = 'jf', -- key to trigger backwards tabout, set to an empty string to disable
+                tabkey = '<C-l>', -- key to trigger tabout, set to an empty string to disable
+                backwards_tabkey = '<C-h>', -- key to trigger backwards tabout, set to an empty string to disable
                 act_as_tab = false, -- shift content if tab out is not possible
                 act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
                 default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
