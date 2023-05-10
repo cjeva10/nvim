@@ -1,7 +1,7 @@
 return {
     {
         "simrat39/rust-tools.nvim",
-        lazy = true,
+        ft = "rust",
         config = function()
             local status_ok, rt = pcall(require, "rust-tools")
             if not status_ok then
