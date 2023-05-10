@@ -1,7 +1,7 @@
 return {
 	{
 		"folke/which-key.nvim",
-		keys = { "<leader>", "g" },
+		keys = { "<leader>", "g", {"<leader>", mode = "v"} },
 		config = function()
 			local status_ok, wk = pcall(require, "which-key")
 			if not status_ok then
