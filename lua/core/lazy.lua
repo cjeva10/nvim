@@ -21,8 +21,8 @@ end
 -- set the leader key before loading plugins
 require("helpers.keys").set_leader(" ")
 
--- load all our plugins
-lazy.setup("plugins")
-
 -- Also have an easy keybind to access lazy
 require("helpers.keys").map("n", "<leader>L", lazy.show, "Show Lazy")
+
+-- load all our plugins
+lazy.setup("plugins")

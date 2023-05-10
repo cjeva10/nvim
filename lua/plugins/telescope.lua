@@ -5,6 +5,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-media-files.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+            { "nvim-telescope/telescope-frecency.nvim", dependencies = "kkharji/sqlite.lua" },
 		},
 		config = function()
 			local status_ok, telescope = pcall(require, "telescope")
@@ -46,6 +47,7 @@ return {
 			})
             pcall(telescope.load_extension, "media_files")
             pcall(telescope.load_extension, "fzf")
+            pcall(telescope.load_extension, "frecency")
 
             local map = require("helpers.keys").map
             local tb = require("telescope.builtin")
@@ -56,7 +58,8 @@ return {
 			map("n", "<leader>fd", tb.diagnostics, "Diagnostics")
 			map("n", "<leader>ff", tb.find_files, "Search files")
 			map("n", "<leader>fg", tb.live_grep, "Grep")
-			map("n", "<leader>fr", tb.oldfiles, "Recently opened files")
+			map("n", "<leader>fh", tb.oldfiles, "Recently opened files")
+			map("n", "<leader>fr", require("telescope").extensions.frecency.frecency, "Recently opened files")
 			map("n", "<leader>fw", tb.grep_string, "Find current word")
 
             map("n", "<leader>sc", tb.commands, "Commands")
