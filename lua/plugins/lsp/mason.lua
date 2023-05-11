@@ -51,7 +51,5 @@ for _, server in pairs(servers) do
 
     if server ~= "rust_analyzer" then
         lspconfig[server].setup(opts)
-    else
-        print("Skipping rust_analyzer")
     end
 end
