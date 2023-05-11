@@ -3,18 +3,27 @@ return {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufReadPost", "BufNewFile" },
         config = function()
+            local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+            parser_config.move = {
+                install_info = {
+                    url = "https://github.com/move-hub/tree-sitter-move",
+                    files = { "src/parser.c", "src/binding.cc", "src/grammar.json" },
+                },
+                filetype = "move",
+            }
             require("nvim-treesitter.configs").setup {
               ensure_installed = {
+                "c",
+                "cpp",
+                "go",
+                "javascript",
                 "lua",
+                "move",
                 "python",
                 "rust",
-                "toml",
-                "c",
-                "javascript",
-                "typescript",
                 "solidity",
-                "cpp",
-                "go"
+                "toml",
+                "typescript",
               },
               sync_install = false,
               ignore_install = { "" }, -- List of parsers to ignore installing
