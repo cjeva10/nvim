@@ -64,6 +64,7 @@ local function lsp_keymaps(bufnr)
 	local lsp_map = require("helpers.keys").lsp_map
     local tb = require("telescope.builtin")
 
+    lsp_map("go", vim.diagnostic.open_float, bufnr, "Open diagnostic")
 	lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
 	lsp_map("gr", tb.lsp_references, bufnr, "Goto References")
 	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
@@ -71,7 +72,7 @@ local function lsp_keymaps(bufnr)
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
 	lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code Action")
-	lsp_map("<leader>ld", tb.diagnostics, bufnr, "Document Diagnostics")
+	lsp_map("<leader>ld", vim.diagnostic.setloclist, bufnr, "Document Diagnostics")
 	lsp_map("<leader>lf", vim.lsp.buf.format, bufnr, "Format")
 	lsp_map("<leader>li", "<cmd>LspInfo<cr>", bufnr, "Info")
 	lsp_map("<leader>lI", "<cmd>LspInstall<cr>", bufnr, "Lsp Install")
