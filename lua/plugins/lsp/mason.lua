@@ -4,7 +4,7 @@ local servers = {
     "pyright",
     "jsonls",
     "rust_analyzer",
-    "move_analyzer",
+    -- "move_analyzer",
     "quick_lint_js",
     "jdtls",
     "clangd",
