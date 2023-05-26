@@ -8,6 +8,7 @@ local servers = {
     "quick_lint_js",
     "jdtls",
     "clangd",
+    -- "ccls",
     "gopls",
 }
 
