@@ -39,9 +39,15 @@ end
 local opts = {}
 
 for _, server in pairs(servers) do
+    -- fix offset_encoding warning with clangd
+    local capabilities = require("plugins.lsp.handlers").capabilities
+    if server == "clangd" then
+        capabilities.offsetEncoding = { "utf-16" }
+    end
+
     opts = {
         on_attach = require("plugins.lsp.handlers").on_attach,
-        capabilities = require("plugins.lsp.handlers").capabilities,
+        capabilities = capabilities,
     }
     server = vim.split(server, "@")[1]
 
