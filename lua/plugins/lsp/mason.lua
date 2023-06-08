@@ -1,14 +1,14 @@
 local servers = {
+    "cssls",
+    "html",
     "luau_lsp",
     "lua_ls",
     "pyright",
     "jsonls",
     "rust_analyzer",
-    -- "move_analyzer",
     "quick_lint_js",
     "jdtls",
     "clangd",
-    -- "ccls",
     "gopls",
 }
 
