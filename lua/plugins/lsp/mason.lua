@@ -12,7 +12,7 @@ local servers = {
     "tailwindcss",
     "clangd",
     "gopls",
-    "sqls",
+    "sqlls",
     "solc",
 }
 
