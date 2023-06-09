@@ -51,10 +51,7 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
+        event = { "BufReadPre *.html",  "BufNewFile *.html", "BufNewFile *.css", "BufReadPre *.css" },
     },
     {
         "abecodes/tabout.nvim",
