@@ -50,6 +50,13 @@ return {
         end,
     },
     {
+        "windwp/nvim-ts-autotag",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
+    {
         "abecodes/tabout.nvim",
         event = { "InsertEnter" },
         config = function()
@@ -90,13 +97,6 @@ return {
             filetype_exclude = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
             show_trailing_blankline_indent = false,
             show_current_context = false,
-        },
-    },
-
-    {
-        "windwp/nvim-ts-autotag",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
         },
     },
 }
