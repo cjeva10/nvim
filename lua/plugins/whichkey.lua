@@ -32,6 +32,7 @@ return {
 				s = { name = "Search" },
 				t = { name = "Terminal" },
                 r = { name = "Rust Tools"},
+                b = { name = "Web Tools"},
 			}
 
 			local vopts = {
