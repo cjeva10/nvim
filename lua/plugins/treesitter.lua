@@ -3,14 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
-			-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-			-- parser_config.move = {
-			--     install_info = {
-			--         url = "/home/chris/coding/move/tree-sitter-move",
-			--         files = { "src/parser.c" },
-			--     },
-			--     filetype = "move",
-			-- }
 			require("nvim-treesitter.configs").setup({
 				autotag = {
 					enable = true,
