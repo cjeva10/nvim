@@ -96,4 +96,15 @@ return {
             show_current_context = false,
         },
     },
+
+    -- distant for using on personal vps
+    {
+        "chipsenkbeil/distant.nvim",
+        branch = "v0.2",
+        config = function()
+            require('distant').setup {
+                ['*'] = require("distant.settings").chip_default()
+            }
+        end,
+    }
 }
