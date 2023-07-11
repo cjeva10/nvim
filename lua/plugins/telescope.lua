@@ -59,7 +59,7 @@ return {
 			map("n", "<leader>ff", tb.find_files, "Search files")
 			map("n", "<leader>fg", tb.live_grep, "Grep")
 			map("n", "<leader>fh", tb.oldfiles, "Recently opened files")
-			map("n", "<leader>fr", require("telescope").extensions.frecency.frecency, "Recently opened files")
+			map("n", "<leader>fr", tb.lsp_references, "References to current item")
 			map("n", "<leader>fw", tb.grep_string, "Find current word")
 
             map("n", "<leader>sc", tb.commands, "Commands")
