@@ -12,6 +12,7 @@ return {
 					"cpp",
 					"go",
 					"javascript",
+                    "java",
 					"lua",
 					-- "move",
 					"python",
