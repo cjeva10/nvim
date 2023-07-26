@@ -11,7 +11,7 @@ return {
     { "numToStr/Comment.nvim", event = { "BufReadPre", "BufNewFile" } },
 
     -- vim-vyper
-    { "vyperlang/vim-vyper",   lazy = true,                           ft = "vyper" },
+    { "vyperlang/vim-vyper",   lazy = true, ft = "vyper" },
 
     -- alpha greeter
     {
