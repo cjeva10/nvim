@@ -6,6 +6,14 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"hrsh7th/cmp-nvim-lsp",
+            {
+                "SmiteshP/nvim-navbuddy",
+                dependencies = {
+                    "SmiteshP/nvim-navic",
+                    "MunifTanjim/nui.nvim",
+                },
+                opts = { lsp = { auto_attach = true } },
+            },
 		},
 		config = function()
 			local status_ok, _ = pcall(require, "lspconfig")
