@@ -51,5 +51,5 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins f
 vim.api.nvim_command('let g:c_syntax_for_h=1')
 
 -- disable netrw
-vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1

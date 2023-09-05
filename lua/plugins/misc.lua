@@ -14,12 +14,12 @@ return {
     { "vyperlang/vim-vyper",   lazy = true, ft = "vyper" },
 
     -- alpha greeter
-    {
-        "goolord/alpha-nvim",
-        config = function()
-            require("alpha").setup(require("alpha.themes.dashboard").config)
-        end,
-    },
+    -- {
+    --     "goolord/alpha-nvim",
+    --     config = function()
+    --         require("alpha").setup(require("alpha.themes.dashboard").config)
+    --     end,
+    -- },
 
     -- R
     { "jalvesaq/Nvim-R", lazy = true, ft = "r" },
