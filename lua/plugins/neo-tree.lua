@@ -16,6 +16,6 @@ return {
                 }
             }
         })
-        require("helpers.keys").map({ "n", "v" }, "<leader>e", "<cmd>NeoTreeRevealToggle<cr>", "File Tree")
+        require("helpers.keys").map({ "n", "v" }, "<leader>e", "<cmd>Neotree toggle<cr>", "File Tree")
     end,
 }
