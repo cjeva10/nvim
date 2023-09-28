@@ -11,15 +11,15 @@ return {
     { "numToStr/Comment.nvim", event = { "BufReadPre", "BufNewFile" } },
 
     -- vim-vyper
-    { "vyperlang/vim-vyper",   lazy = true, ft = "vyper" },
+    { "vyperlang/vim-vyper",   lazy = true,                           ft = "vyper" },
 
     -- alpha greeter
-    -- {
-    --     "goolord/alpha-nvim",
-    --     config = function()
-    --         require("alpha").setup(require("alpha.themes.dashboard").config)
-    --     end,
-    -- },
+    {
+        "goolord/alpha-nvim",
+        config = function()
+            require("alpha").setup(require("alpha.themes.dashboard").config)
+        end,
+    },
 
     -- R
     { "jalvesaq/Nvim-R", lazy = true, ft = "r" },
@@ -51,21 +51,21 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
-        event = { "BufReadPre *.html",  "BufNewFile *.html", "BufNewFile *.css", "BufReadPre *.css" },
+        event = { "BufReadPre *.html", "BufNewFile *.html", "BufNewFile *.css", "BufReadPre *.css" },
     },
     {
         "abecodes/tabout.nvim",
         event = { "InsertEnter" },
         config = function()
             require("tabout").setup({
-                tabkey = "<C-l>", -- key to trigger tabout, set to an empty string to disable
-                backwards_tabkey = "<C-h>", -- key to trigger backwards tabout, set to an empty string to disable
-                act_as_tab = false, -- shift content if tab out is not possible
-                act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
-                default_tab = "<C-t>", -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+                tabkey = "<C-l>",            -- key to trigger tabout, set to an empty string to disable
+                backwards_tabkey = "<C-h>",  -- key to trigger backwards tabout, set to an empty string to disable
+                act_as_tab = false,          -- shift content if tab out is not possible
+                act_as_shift_tab = false,    -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+                default_tab = "<C-t>",       -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
                 default_shift_tab = "<C-d>", -- reverse shift default action,
-                enable_backwards = true, -- well ...
-                completion = false, -- if the tabkey is used in a completion pum
+                enable_backwards = true,     -- well ...
+                completion = false,          -- if the tabkey is used in a completion pum
                 tabouts = {
                     { open = "'", close = "'" },
                     { open = '"', close = '"' },
@@ -106,5 +106,10 @@ return {
                 ['*'] = require("distant.settings").chip_default()
             }
         end,
-    }
+    },
+
+    -- transparent nvim
+    {
+        "xiyaowong/transparent.nvim",
+    },
 }
