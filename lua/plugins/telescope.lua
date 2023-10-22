@@ -5,7 +5,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-media-files.nvim",
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
-            { "nvim-telescope/telescope-frecency.nvim", dependencies = "kkharji/sqlite.lua" },
+            { "nvim-telescope/telescope-frecency.nvim" },
 		},
 		config = function()
 			local status_ok, telescope = pcall(require, "telescope")
