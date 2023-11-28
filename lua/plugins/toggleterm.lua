@@ -33,20 +33,21 @@ return {
             })
 
             function _G.set_terminal_keymaps()
-              local opts = {noremap = true}
-              vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-              vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
-              vim.api.nvim_buf_set_keymap(0, 't', '<C-n>', [[2<C-\>]], opts)
-              vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-l>]], opts)
+                local opts = { noremap = true }
+                vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], opts)
+                vim.api.nvim_buf_set_keymap(0, "t", "jk", [[<C-\><C-n>]], opts)
+                vim.api.nvim_buf_set_keymap(0, "t", "<C-n>", [[2<C-\>]], opts)
+                vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-l>]], opts)
             end
 
-            vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+            vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 
             -- bind different terminal functions
             local map = require("helpers.keys").map
             map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", "Float")
             map("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal")
             map("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical")
+            map("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", "Tab")
         end,
-    }
+    },
 }
