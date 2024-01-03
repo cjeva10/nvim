@@ -10,7 +10,7 @@ return {
 
 			copilot.setup({
 				panel = {
-					enabled = true,
+					enabled = false,
 					auto_refresh = false,
 					keymap = {
 						jump_prev = "[[",
@@ -20,12 +20,12 @@ return {
 						open = "<M-CR>",
 					},
 					layout = {
-						position = "bottom", -- | top | left | right
+						position = "right", -- | top | left | right
 						ratio = 0.4,
 					},
 				},
 				suggestion = {
-					enabled = true,
+					enabled = false,
 					auto_trigger = false,
 					debounce = 75,
 					keymap = {
