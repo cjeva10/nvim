@@ -16,8 +16,8 @@ map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
 -- helix-like g motions
-map("n", "gh", "g^")
-map("n", "gl", "g$")
+map("n", "gh", "^")
+map("n", "gl", "$")
 map("n", "ge", "G")
 
 -- Resize with arrows
