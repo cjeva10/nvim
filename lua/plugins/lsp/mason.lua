@@ -13,7 +13,6 @@ local servers = {
     "clangd",
     "gopls",
     "sqlls",
-    "solc",
 }
 
 local settings = {
