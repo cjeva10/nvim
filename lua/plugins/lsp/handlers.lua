@@ -84,8 +84,6 @@ local function lsp_keymaps(bufnr)
 	lsp_map("<leader>ls", tb.lsp_document_symbols, bufnr, "Document symbols")
 	lsp_map("<leader>lS", tb.lsp_dynamic_workspace_symbols, bufnr, "Workspace Symbols")
 	lsp_map("<leader>lt", vim.lsp.buf.type_definition, bufnr, "Type definition")
-
-    -- lsp_map("<leader>n", require("nvim-navbuddy").open, bufnr, "Navbuddy")
 end
 
 M.on_attach = function(client, bufnr)

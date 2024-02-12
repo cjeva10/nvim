@@ -31,7 +31,6 @@ return {
 				l = { name = "LSP" },
 				s = { name = "Search" },
 				t = { name = "Terminal" },
-                r = { name = "Rust Tools"},
                 b = { name = "Web Tools"},
 			}
 
