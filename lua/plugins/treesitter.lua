@@ -11,6 +11,8 @@ return {
 					"c",
 					"cpp",
 					"go",
+                    "html",
+                    "htmldjango",
 					"javascript",
                     "java",
 					"lua",
