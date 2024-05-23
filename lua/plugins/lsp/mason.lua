@@ -14,6 +14,7 @@ local servers = {
     "gopls",
     "sqlls",
     "ruff",
+    "solidity",
 }
 
 local settings = {
