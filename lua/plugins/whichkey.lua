@@ -31,7 +31,6 @@ return {
 				l = { name = "LSP" },
 				s = { name = "Search" },
 				t = { name = "Terminal" },
-                b = { name = "Web Tools"},
 			}
 
 			local vopts = {

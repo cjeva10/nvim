@@ -18,10 +18,7 @@ if not status_ok then
     return
 end
 
--- set the leader key before loading plugins
-require("helpers.keys").set_leader(" ")
-
--- Also have an easy keybind to access lazy
+-- access lazy with SPC - L
 require("helpers.keys").map("n", "<leader>L", lazy.show, "Show Lazy")
 
 -- load all our plugins

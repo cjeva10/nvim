@@ -1,4 +1,7 @@
 local map = require("helpers.keys").map
+local set_leader = require("helpers.keys").set_leader
+
+set_leader(" ")
 
 -- Modes
 --   normal_mode = "n",
@@ -29,6 +32,7 @@ map("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
+map("n", "<leader>db", ":bdelete<CR>")
 
 -- Move text up and down
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
@@ -62,7 +66,3 @@ map("t", "<C-h>", "<C-\\><C-N><C-w>h")
 map("t", "<C-j>", "<C-\\><C-N><C-w>j")
 map("t", "<C-k>", "<C-\\><C-N><C-w>k")
 map("t", "<C-l>", "<C-\\><C-N><C-w>l")
-
--- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
