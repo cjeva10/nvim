@@ -9,7 +9,6 @@ return {
                 return
             end
 
-            local highlights = require("rose-pine.plugins.toggleterm")
             toggleterm.setup({
                 size = 120,
                 open_mapping = [[<c-t>]],
@@ -26,7 +25,6 @@ return {
                 float_opts = {
                     border = "curved",
                     winblend = 0,
-                    highlights = highlights,
                 },
             })
 
