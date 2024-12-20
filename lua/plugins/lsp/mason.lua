@@ -8,7 +8,6 @@ local servers = {
     "rust_analyzer",
     "quick_lint_js",
     "jdtls",
-    "tsserver",
     "tailwindcss",
     "clangd",
     "gopls",
