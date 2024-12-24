@@ -69,6 +69,7 @@ local function lsp_keymaps(bufnr)
 	lsp_map("gr", tb.lsp_references, bufnr, "Goto References")
 	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
 	lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
+	lsp_map("<leader>k", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
 	lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code Action")

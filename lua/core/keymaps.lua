@@ -43,7 +43,7 @@ map("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
-map("n", "<leader>db", ":bdelete<CR>")
+map("n", "<leader>wc", ":bdelete<CR>")
 
 -- Move text up and down
 map("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
@@ -57,7 +57,7 @@ map("i", "kj", "<ESC>")
 -- Visual --
 -- Stay in indent mode when moving indents
 map("v", "<", "<gv")
-map("v", ">", ">gv")
+map("v", "<", "<gv")
 
 -- Move text up and down
 map("v", "<A-j>", ":m .+1<CR>==")
