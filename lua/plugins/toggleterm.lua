@@ -40,10 +40,7 @@ return {
 
             -- bind different terminal functions
             local map = require("helpers.keys").map
-            map("n", "<leader>tf", "<cmd>ToggleTerm direction=float<cr>", "Float")
-            map("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal")
-            map("n", "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical")
-            map("n", "<leader>tt", "<cmd>ToggleTerm direction=tab<cr>", "Tab")
+            map("n", "<leader>t", "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical")
         end,
     },
 }

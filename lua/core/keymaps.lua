@@ -3,7 +3,7 @@ local set_leader = require("helpers.keys").set_leader
 
 set_leader(" ")
 
--- Modes
+--   Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
 --   visual_mode = "v",
@@ -18,8 +18,19 @@ map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
+map("n", "<leader>wh", "<C-w>h")
+map("n", "<leader>wj", "<C-w>j")
+map("n", "<leader>wk", "<C-w>k")
+map("n", "<leader>wl", "<C-w>l")
+
+map("n", "<leader>wv", ":vsplit<CR>")
+map("n", "<leader>ws", ":split<CR>")
+map("n", "<leader>w ", ":w<CR>")
+map("n", "<leader>q", ":qa!<CR>")
+
 -- helix-like g motions
-map("n", "gh", "^")
+map("n", "gh", "0")
+map("n", "gs", "^")
 map("n", "gl", "$")
 map("n", "ge", "G")
 
