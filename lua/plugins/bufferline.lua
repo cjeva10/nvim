@@ -11,7 +11,9 @@ return {
 				return
 			end
 
-			bufferline.setup({})
+			bufferline.setup({
+                highlights = require("catppuccin.groups.integrations.bufferline").get()
+            })
 		end,
 	},
 }

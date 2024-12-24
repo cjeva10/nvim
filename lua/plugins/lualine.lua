@@ -6,7 +6,11 @@ return {
 			"AndreM222/copilot-lualine",
 		},
 		config = function()
-			require("lualine").setup({})
+			require("lualine").setup({
+                options = {
+                    theme = "catppuccin"
+                }
+            })
 		end,
 	},
 }
