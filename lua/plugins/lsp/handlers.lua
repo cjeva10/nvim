@@ -1,6 +1,5 @@
 local M = {}
 
--- TODO: backfill this to template
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -68,7 +67,6 @@ local function lsp_keymaps(bufnr)
 	lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
 	lsp_map("gr", tb.lsp_references, bufnr, "Goto References")
 	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
-	lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("<leader>k", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
