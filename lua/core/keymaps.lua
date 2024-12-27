@@ -34,6 +34,9 @@ map("n", "gs", "^")
 map("n", "gl", "$")
 map("n", "ge", "G")
 
+-- Redo
+map("n", "U", "<C-r>")
+
 -- Resize with arrows
 map("n", "<C-Up>", ":resize -2<CR>")
 map("n", "<C-Down>", ":resize +2<CR>")
