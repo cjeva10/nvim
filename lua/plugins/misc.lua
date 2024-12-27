@@ -42,4 +42,40 @@ return {
 			map({ "x", "o" }, "S", "<Plug>(leap-backward)")
 		end,
 	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		dependencies = { { "echasnovski/mini.icons", opts = {} } },
+		config = function()
+			local status_ok, oil = pcall(require, "oil")
+			if not status_ok then
+				return
+			end
+
+			oil.setup({
+				view_options = {
+					show_hidden = true,
+				},
+			})
+
+            local is_oil_open = function()
+                if vim.bo.filetype == "oil" then
+                    return true
+                else
+                    return false
+                end
+            end
+
+            local oil_toggle = function()
+                if is_oil_open() then
+                    oil.close()
+                else
+                    oil.open()
+                end
+            end
+
+			local map = require("helpers.keys").map
+			map({ "n", "v" }, "<leader>e", oil_toggle, "Open parent directory")
+		end,
+	},
 }
