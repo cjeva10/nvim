@@ -56,6 +56,8 @@ return {
 			map("n", "<leader>/", tb.current_buffer_fuzzy_find, "Search current buffer")
 
 			map("n", "<leader>b", tb.buffers, "Open buffers")
+			map("n", "<leader>j", tb.jumplist, "Jump list")
+			map("n", "<leader>m", tb.marks, "Marks")
 			map("n", "<leader>d", tb.diagnostics, "Diagnostics")
 			map("n", "<leader>f", tb.find_files, "Search files")
 			map("n", "<leader>g", tb.live_grep, "Grep")
