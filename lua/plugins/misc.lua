@@ -45,7 +45,7 @@ return {
     {
         "stevearc/oil.nvim",
         opts = {},
-        dependencies = { { "echasnovski/mini.icons", opts = {} } },
+        dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
         config = function()
             local status_ok, oil = pcall(require, "oil")
             if not status_ok then
