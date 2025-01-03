@@ -14,7 +14,7 @@ return {
             local comment = require("Comment.api")
             local map = require("helpers.keys").map
             map("n", "<leader>c", comment.toggle.linewise.current, "Comment")
-            map("v", "hleaderhc", comment.toggle.linewise.current, "Comment")
+            map("v", "<leader>c", comment.toggle.linewise.current, "Comment")
         end,
     },
     { "vyperlang/vim-vyper", lazy = true, ft = "vyper" },
