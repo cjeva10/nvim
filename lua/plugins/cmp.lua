@@ -11,6 +11,7 @@ local M = {
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
+        "windwp/nvim-autopairs",
     },
     config = function()
         local cmp_status_ok, cmp = pcall(require, "cmp")
@@ -24,6 +25,13 @@ local M = {
         end
 
         require("luasnip/loaders/from_vscode").lazy_load()
+
+        -- If you want insert `(` after select function or method item
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+          'confirm_done',
+          cmp_autopairs.on_confirm_done()
+        )
 
         --   פּ ﯟ   some other good icons
         local kind_icons = {
