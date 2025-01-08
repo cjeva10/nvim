@@ -17,8 +17,6 @@ return {
             map("v" , "<leader>c", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>', "Comment visual")
         end,
     },
-    { "vyperlang/vim-vyper", lazy = true, ft = "vyper" },
-    { "jalvesaq/Nvim-R",     lazy = true, ft = "r" },
     {
         "windwp/nvim-autopairs",
         event = { "InsertEnter" },
