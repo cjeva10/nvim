@@ -8,7 +8,7 @@ return {
             end
 
             toggleterm.setup({
-                size = 80,
+                size = 120,
                 open_mapping = [[<C-t>]],
                 shading_factor = 2,
                 direction = "vertical",
