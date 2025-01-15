@@ -6,7 +6,7 @@ local servers = {
     "pyright",
     "ruff",
     "rust_analyzer",
-    "solidity",
+    "solidity_ls_nomicfoundation",
     "ts_ls",
 }
 
