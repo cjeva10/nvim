@@ -27,7 +27,6 @@ map("n", "<leader>wv", ":vsplit<CR>")
 map("n", "<leader>ws", ":split<CR>")
 map("n", "<leader>w ", ":w<CR>")
 map("n", "<leader>wq", ":q<CR>")
-map("n", "<leader>q", ":qa!<CR>")
 
 -- helix-like g motions
 map("n", "gh", "0")
