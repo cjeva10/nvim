@@ -29,8 +29,8 @@ local M = {
         -- If you want insert `(` after select function or method item
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         cmp.event:on(
-          'confirm_done',
-          cmp_autopairs.on_confirm_done()
+            'confirm_done',
+            cmp_autopairs.on_confirm_done()
         )
 
         --   פּ ﯟ   some other good icons
@@ -72,7 +72,8 @@ local M = {
                 ["<C-k>"] = cmp.mapping.select_prev_item(),
                 ["<C-j>"] = cmp.mapping.select_next_item(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm(),
+                ["<C-Space>"] = cmp.mapping.complete(),
             },
             formatting = {
                 fields = { "kind", "abbr", "menu" },
