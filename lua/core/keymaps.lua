@@ -14,6 +14,9 @@ set_leader(" ")
 -- use spc-w to edit windows
 map("n", "<leader>w", "<C-w>")
 
+-- open terminal in current window
+map("n", "<leader>t", ":term<CR>")
+
 -- helix-like g motions
 map("n", "gh", "0")
 map("n", "gs", "^")
@@ -30,6 +33,7 @@ map("n", "<S-h>", ":bprevious<CR>")
 -- Save and close buffer
 map("n", "<leader>wc", ":bdelete<CR>")
 map("n", "<leader>w ", ":w<CR>")
+map("n", "<leader>qq", ":qa!<CR>")
 
 -- Visual --
 -- Stay in indent mode when moving indents
