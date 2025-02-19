@@ -16,6 +16,7 @@ map("n", "<leader>w", "<C-w>")
 
 -- open terminal in current window
 map("n", "<leader>t", ":term<CR>")
+map("t", "<esc>", "<C-\\><C-n>")
 
 -- helix-like g motions
 map("n", "gh", "0")
