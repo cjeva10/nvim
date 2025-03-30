@@ -8,7 +8,7 @@ return {
 		config = function()
 			local catppuccin = require("catppuccin")
 			catppuccin.setup({
-				flavour = "macchiato", -- latte, frappe, macchiato, mocha
+				flavour = "mocha", -- latte, frappe, macchiato, mocha
 			})
 			catppuccin.load()
 		end,
