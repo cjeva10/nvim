@@ -4,6 +4,7 @@ local servers = {
     "jsonls",
     "lua_ls",
     "pyright",
+    "ruby_lsp",
     "ruff",
     "rust_analyzer",
     "solidity_ls_nomicfoundation",

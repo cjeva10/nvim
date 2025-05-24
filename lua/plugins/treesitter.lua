@@ -20,6 +20,7 @@ return {
                     "java",
                     "lua",
                     "python",
+                    "ruby",
                     "rust",
                     "solidity",
                     "toml",
