@@ -40,3 +40,6 @@ map("n", "<leader>qq", ":qa!<CR>")
 -- Stay in indent mode when moving indents
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+map("n", "<", "<<")
+map("n", ">", ">>")
