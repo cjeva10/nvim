@@ -19,11 +19,6 @@ return {
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            local status_ok, lspconfig = pcall(require, "lspconfig")
-            if not status_ok then
-                return
-            end
-
             local capabilities = require("plugins.lsp.handlers").capabilities
             local opts = {
                 on_attach = require("plugins.lsp.handlers").on_attach,
@@ -46,7 +41,8 @@ return {
                     conf_opts = opts
                 end
 
-                lspconfig[server].setup(conf_opts)
+                vim.lsp.config(server, conf_opts)
+                vim.lsp.enable(server)
             end
         end,
     },
