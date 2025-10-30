@@ -8,7 +8,16 @@ return {
         config = function()
             require("lualine").setup({
                 options = {
-                    theme = "catppuccin"
+                    theme = "catppuccin",
+                    section_separators = '',
+                    component_separators = '',
+                    sections = {
+                        lualine_c = {
+                            'filename',
+                            path = 3,
+                            shorting_target = 0
+                        }
+                    }
                 }
             })
         end,
