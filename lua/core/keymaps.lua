@@ -39,3 +39,7 @@ map("v", ">", ">gv")
 
 map("n", "<", "<<")
 map("n", ">", ">>")
+
+-- Navigate buffers
+map("n", "<S-l>", ":bnext<CR>")
+map("n", "<S-h>", ":bprevious<CR>")
