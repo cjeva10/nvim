@@ -27,13 +27,9 @@ map("n", "ge", "G")
 -- Redo
 map("n", "U", "<C-r>")
 
--- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
-
--- Save and close buffer
-map("n", "<leader>wc", ":bdelete<CR>")
+-- Save 
 map("n", "<leader>w ", ":w<CR>")
+-- close all
 map("n", "<leader>qq", ":qa!<CR>")
 
 -- Visual --
