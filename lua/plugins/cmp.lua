@@ -1,5 +1,3 @@
--- find more here: https://www.nerdfonts.com/cheat-sheet
-
 local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -60,7 +58,6 @@ local M = {
             Event = "",
             Operator = "",
             TypeParameter = "",
-            Copilot = "",
         }
         cmp.setup({
             snippet = {
@@ -82,7 +79,6 @@ local M = {
                     vim_item.menu = ({
                         nvim_lsp = "[LSP]",
                         nvim_lua = "[NVIM_LUA]",
-                        copilot = "[copilot]",
                         luasnip = "[Snippet]",
                         buffer = "[Buffer]",
                         path = "[Path]",
@@ -94,7 +90,6 @@ local M = {
                 { name = "nvim_lsp" },
                 { name = "buffer" },
                 { name = "nvim_lua" },
-                { name = "copilot" },
                 { name = "luasnip" },
                 { name = "path" },
             },
