@@ -1,4 +1,4 @@
-local M = {
+return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -96,5 +96,3 @@ local M = {
         })
     end,
 }
-
-return M
