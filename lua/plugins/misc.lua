@@ -1,13 +1,6 @@
 -- this file just loads the leftover plugins that we don't have a custom config for
 return {
     {
-        "kylechui/nvim-surround",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("nvim-surround").setup({})
-        end,
-    },
-    {
         "numToStr/Comment.nvim",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
@@ -16,13 +9,6 @@ return {
             map("n", "<leader>c", comment.toggle.linewise.current, "Comment")
             map("v", "<leader>c", '<ESC><CMD>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<CR>',
                 "Comment visual")
-        end,
-    },
-    {
-        "windwp/nvim-autopairs",
-        event = { "InsertEnter" },
-        config = function()
-            require("nvim-autopairs").setup({})
         end,
     },
     {
