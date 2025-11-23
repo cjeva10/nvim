@@ -13,6 +13,8 @@ set_leader(" ")
 
 -- use spc-w to edit windows
 map("n", "<leader>w", "<C-w>")
+map("n", "<leader>v", "<C-w>v")
+map("n", "<leader> ", "<C-w>w")
 
 -- open terminal in current window
 map("n", "<leader>t", ":term<CR>")
