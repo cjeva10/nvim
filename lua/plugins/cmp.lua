@@ -5,9 +5,14 @@ return {
     opts = {
         keymap = {
             ["<C-e>"] = { "cancel", "fallback" },
-            ["<CR>"] = {"accept", "fallback" },
+            ["<CR>"] = { "accept", "fallback" },
         },
         completion = {
+            list = {
+                selection = {
+                    preselect = false,
+                },
+            },
             menu = {
                 draw = {
                     columns = {
