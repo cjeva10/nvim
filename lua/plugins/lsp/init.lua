@@ -19,9 +19,10 @@ return {
             "saghen/blink.cmp",
         },
         config = function()
-            local capabilities = require("plugins.lsp.handlers").capabilities
+            local lsp_handlers = require("plugins.lsp.handlers")
+            local capabilities = lsp_handlers.capabilities
             local opts = {
-                on_attach = require("plugins.lsp.handlers").on_attach,
+                on_attach = lsp_handlers.on_attach,
                 capabilities = capabilities,
             }
 
