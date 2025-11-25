@@ -4,7 +4,8 @@ return {
     version = "1.8.0",
     opts = {
         keymap = {
-            ["<C-e>"] = { "cancel" },
+            ["<C-e>"] = { "cancel", "fallback" },
+            ["<CR>"] = {"accept", "fallback" },
         },
         completion = {
             menu = {
