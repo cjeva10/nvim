@@ -16,7 +16,7 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
+            "saghen/blink.cmp",
         },
         config = function()
             local capabilities = require("plugins.lsp.handlers").capabilities
@@ -30,8 +30,6 @@ return {
                 if server == "clangd" then
                     capabilities.offsetEncoding = { "utf-16" }
                 end
-
-                server = vim.split(server, "@")[1]
 
                 local require_ok, lang_opts = pcall(require, "plugins.lsp.settings." .. server)
                 local conf_opts = {}
