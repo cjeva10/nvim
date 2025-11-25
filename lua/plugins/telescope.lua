@@ -4,6 +4,7 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+            { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
             local status_ok, telescope = pcall(require, "telescope")
