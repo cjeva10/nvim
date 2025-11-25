@@ -9,7 +9,6 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
-        "windwp/nvim-autopairs",
     },
     config = function()
         local cmp_status_ok, cmp = pcall(require, "cmp")
