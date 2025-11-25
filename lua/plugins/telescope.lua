@@ -3,7 +3,6 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-media-files.nvim",
             { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
         },
         config = function()
@@ -19,23 +18,7 @@ return {
                     path_display = { "smart" },
                 },
 
-                extensions = {
-                    media_files = {
-                        -- filetypes whitelist
-                        filetypes = {
-                            "jpeg",
-                            "jpg",
-                            "mp4",
-                            "pdf",
-                            "png",
-                            "webp",
-                            "webm",
-                        },
-                        find_cmd = "rg", -- find command (defaults to `fd`)
-                    },
-                },
             })
-            pcall(telescope.load_extension, "media_files")
             pcall(telescope.load_extension, "fzf")
 
             local map = require("helpers.keys").map
