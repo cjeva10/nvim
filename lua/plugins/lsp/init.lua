@@ -7,7 +7,7 @@ local servers = {
     "ruby_lsp",
     "ruff",
     "rust_analyzer",
-    "solidity_ls_nomicfoundation",
+    "solidity_ls",
     "ts_ls",
 }
 
