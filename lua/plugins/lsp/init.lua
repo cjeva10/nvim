@@ -7,7 +7,7 @@ local servers = {
     "ruby_lsp",
     "ruff",
     "rust_analyzer",
-    "solidity_ls",
+    "solidity_ls_nomicfoundation",
     "ts_ls",
 }
 
@@ -29,7 +29,7 @@ return {
             for _, server in pairs(servers) do
                 -- fix offset_encoding warning with clangd
                 if server == "clangd" then
-                    capabilities.offsetEncoding = { "utf-16" }
+                    opts.capabilities.offsetEncoding = { "utf-16" }
                 end
 
                 local require_ok, lang_opts = pcall(require, "plugins.lsp.settings." .. server)
