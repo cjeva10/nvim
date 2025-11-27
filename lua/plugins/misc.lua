@@ -14,19 +14,14 @@ return {
     {
         "lewis6991/gitsigns.nvim",
         event = { "BufReadPre", "BufNewFile" },
-        opts = {},
     },
     {
         "stevearc/oil.nvim",
-        opts = {},
         dependencies = {
             { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
-            local status_ok, oil = pcall(require, "oil")
-            if not status_ok then
-                return
-            end
+            local oil = require("oil")
 
             oil.setup({
                 view_options = {

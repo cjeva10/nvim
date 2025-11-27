@@ -7,10 +7,7 @@ return {
             { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
-            local status_ok, telescope = pcall(require, "telescope")
-            if not status_ok then
-                return
-            end
+            local telescope = require("telescope")
 
             telescope.setup({
                 defaults = {
@@ -20,7 +17,7 @@ return {
                 },
 
             })
-            pcall(telescope.load_extension, "fzf")
+            telescope.load_extension("fzf")
 
             local map = require("helpers.keys").map
             local tb = require("telescope.builtin")

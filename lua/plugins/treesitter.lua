@@ -4,10 +4,7 @@ return {
         dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
         event = { "BufReadPost", "BufNewFile" },
         config = function()
-            local status_ok, treesitter_configs = pcall(require, "nvim-treesitter.configs")
-            if not status_ok then
-                return
-            end
+            local treesitter_configs = require("nvim-treesitter.configs")
 
             treesitter_configs.setup({
                 ensure_installed = {
@@ -58,7 +55,7 @@ return {
             })
         end,
         build = function()
-            pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+            require("nvim-treesitter.install").update({ with_sync = true })
         end,
     },
 }

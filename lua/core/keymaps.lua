@@ -1,5 +1,6 @@
-local map = require("helpers.keys").map
-local set_leader = require("helpers.keys").set_leader
+local keys = require("helpers.keys")
+local map = keys.map
+local set_leader = keys.set_leader
 
 set_leader(" ")
 
@@ -31,6 +32,7 @@ map("n", "U", "<C-r>")
 
 -- Save 
 map("n", "<leader>w ", ":w<CR>")
+
 -- close all
 map("n", "<leader>qq", ":qa!<CR>")
 
@@ -41,7 +43,3 @@ map("v", ">", ">gv")
 
 map("n", "<", "<<")
 map("n", ">", ">>")
-
--- Navigate buffers
-map("n", "<S-l>", ":bnext<CR>")
-map("n", "<S-h>", ":bprevious<CR>")
