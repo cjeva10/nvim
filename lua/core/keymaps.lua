@@ -43,3 +43,6 @@ map("v", ">", ">gv")
 
 map("n", "<", "<<")
 map("n", ">", ">>")
+
+-- edit todos file
+map("n", "gt", ":e ~/todos.md<CR>")
