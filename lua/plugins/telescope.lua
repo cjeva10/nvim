@@ -30,7 +30,7 @@ return {
             map("n", "<leader>f", tb.find_files, "Search files")
             map("n", "<leader>g", tb.live_grep, "Grep")
             map("n", "<leader>h", tb.oldfiles, "Recently opened files")
-            map("n", "gw", tb.grep_string, "Find current word")
+            map({"n", "v"}, "gw", tb.grep_string, "Find current word")
         end,
     },
 }
