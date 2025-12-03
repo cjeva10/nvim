@@ -12,11 +12,6 @@ set_leader(" ")
 --   term_mode = "t",
 --   command_mode = "c",
 
--- use spc-w to edit windows
-map("n", "<leader>w", "<C-w>")
-map("n", "<leader>v", "<C-w>v")
-map("n", "<leader> ", "<C-w>w")
-
 -- open terminal in current window
 map("n", "<leader>t", ":term<CR>")
 map("t", "<esc>", "<C-\\><C-n>")
@@ -29,9 +24,6 @@ map("n", "ge", "G")
 
 -- Redo
 map("n", "U", "<C-r>")
-
--- Save 
-map("n", "<leader>w ", ":w<CR>")
 
 -- close all
 map("n", "<leader>qq", ":qa!<CR>")
