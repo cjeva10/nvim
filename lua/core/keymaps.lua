@@ -37,4 +37,4 @@ map("n", "<", "<<")
 map("n", ">", ">>")
 
 -- edit todos file
-map("n", "gt", ":e ~/todos.md<CR>")
+map("n", "<leader>x", ":e ~/todos.md<CR>")
