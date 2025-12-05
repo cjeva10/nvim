@@ -1,9 +1,3 @@
-local keys = require("helpers.keys")
-local map = keys.map
-local set_leader = keys.set_leader
-
-set_leader(" ")
-
 --   Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -11,6 +5,10 @@ set_leader(" ")
 --   visual_block_mode = "x",
 --   term_mode = "t",
 --   command_mode = "c",
+
+local map = require("helpers.keys").map
+
+vim.g.mapleader = " "
 
 -- open terminal in current window
 map("n", "<leader>t", ":term<CR>")
