@@ -29,25 +29,9 @@ end
 
 local opts = {
     on_attach = on_attach,
-    capabilities = require("blink.cmp").get_lsp_capabilities(
-        vim.lsp.protocol.make_client_capabilities()
-    ),
 }
 
 for _, server in pairs(servers) do
-    -- fix offset_encoding warning with clangd
-    if server == "clangd" then
-        opts.capabilities.offsetEncoding = { "utf-16" }
-    end
-
-    local require_ok, lang_opts = pcall(require, "plugins.lsp.settings." .. server)
-    local conf_opts = {}
-    if require_ok then
-        conf_opts = vim.tbl_deep_extend("force", lang_opts, opts)
-    else
-        conf_opts = opts
-    end
-
-    vim.lsp.config(server, conf_opts)
+    vim.lsp.config(server, opts)
     vim.lsp.enable(server)
 end
