@@ -9,14 +9,11 @@ local function lsp_keymaps(bufnr)
     lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
     lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
-    lsp_map("<leader>k", vim.lsp.buf.hover, bufnr, "Hover Documentation")
     lsp_map("<leader>a", vim.lsp.buf.code_action, bufnr, "Code Action")
     lsp_map("<leader>r", vim.lsp.buf.rename, bufnr, "Rename symbol")
     lsp_map("<leader>o", vim.diagnostic.open_float, bufnr, "Open diagnostic")
     lsp_map("<leader>ld", vim.diagnostic.setloclist, bufnr, "Document Diagnostics")
     lsp_map("<leader>lf", vim.lsp.buf.format, bufnr, "Format")
-    lsp_map("<leader>lj", function() vim.diagnostic.jump({ count = 1, float = true }) end, bufnr, "Next Diagnostic")
-    lsp_map("<leader>lk", function() vim.diagnostic.jump({ count = -1, float = true }) end, bufnr, "Previous Diagnostic")
 end
 
 M.on_attach = function(_, bufnr)
@@ -25,8 +22,6 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-
-M.capabilities = capabilities
+M.capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
 return M

@@ -5,7 +5,6 @@ return {
     opts = {
         keymap = {
             ["<C-e>"] = { "cancel", "fallback" },
-            ["<CR>"] = { "accept", "fallback" },
         },
         completion = {
             list = {

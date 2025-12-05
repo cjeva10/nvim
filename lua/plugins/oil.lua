@@ -13,16 +13,8 @@ return {
                 },
             })
 
-            local is_oil_open = function()
-                if vim.bo.filetype == "oil" then
-                    return true
-                else
-                    return false
-                end
-            end
-
             local oil_toggle = function()
-                if is_oil_open() then
+                if vim.bo.filetype == "oil" then
                     oil.close()
                 else
                     oil.open()
