@@ -3,7 +3,7 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
             { "nvim-tree/nvim-web-devicons" },
         },
         config = function()
@@ -14,7 +14,6 @@ return {
                     prompt_prefix = "  ",
                     selection_caret = " ",
                 },
-
             })
             telescope.load_extension("fzf")
 
@@ -27,7 +26,7 @@ return {
             map("n", "<leader>d", tb.diagnostics, "Diagnostics")
             map("n", "<leader>f", tb.find_files, "Search files")
             map("n", "<leader>g", tb.live_grep, "Grep")
-            map({"n", "v"}, "gw", tb.grep_string, "Find current word")
+            map({ "n", "v" }, "gw", tb.grep_string, "Find current word")
         end,
     },
 }
