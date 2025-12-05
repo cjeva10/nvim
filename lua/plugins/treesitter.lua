@@ -34,11 +34,6 @@ return {
                             ["ic"] = "@class.inner",
                             ["as"] = "@local.scope",
                         },
-                        selection_modes = {
-                            ['@parameter.outer'] = 'v', -- charwise
-                            ['@function.outer'] = 'v',  -- linewise
-                            ['@class.outer'] = '<c-v>', -- blockwise
-                        },
                     },
                 },
                 autotag = {
