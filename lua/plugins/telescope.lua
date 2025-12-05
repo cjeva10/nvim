@@ -13,6 +13,7 @@ return {
                 defaults = {
                     prompt_prefix = "  ",
                     selection_caret = " ",
+                    path_display = { "truncate" },
                 },
             })
             telescope.load_extension("fzf")
