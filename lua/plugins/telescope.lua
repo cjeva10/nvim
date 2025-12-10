@@ -9,16 +9,14 @@ return {
         local telescope = require("telescope")
 
         telescope.setup({
-            defaults = require("telescope.themes").get_ivy({
+            defaults = {
                 prompt_prefix = "  ",
                 selection_caret = " ",
                 path_display = { "truncate" },
                 layout_config = {
-                    prompt_position = "top",
                     preview_width = 0.5,
                 },
-                sorting_strategy = 'ascending',
-            }),
+            },
         })
         telescope.load_extension("fzf")
 
