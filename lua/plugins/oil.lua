@@ -20,7 +20,7 @@ return {
             end
         end
 
-        local map = require("helpers.keys").map
+        local map = require("helpers").map
         map({ "n", "v", "x" }, "<leader>e", oil_toggle, "Open parent directory")
     end,
 }

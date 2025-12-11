@@ -6,7 +6,7 @@
 --   term_mode = "t",
 --   command_mode = "c",
 
-local map = require("helpers.keys").map
+local map = require("helpers").map
 
 vim.g.mapleader = " "
 

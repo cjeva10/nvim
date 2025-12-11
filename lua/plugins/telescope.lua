@@ -20,7 +20,7 @@ return {
         })
         telescope.load_extension("fzf")
 
-        local map = require("helpers.keys").map
+        local map = require("helpers").map
         local tb = require("telescope.builtin")
 
         map("n", "<leader>/", tb.current_buffer_fuzzy_find, "Search current buffer")

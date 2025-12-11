@@ -12,7 +12,7 @@ local servers = {
 }
 
 local on_attach = function(_, bufnr)
-    local lsp_map = require("helpers.keys").lsp_map
+    local lsp_map = require("helpers").lsp_map
     local tb = require("telescope.builtin")
 
     lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")

@@ -19,7 +19,7 @@ if not status_ok then
 end
 
 -- access lazy with SPC - L
-require("helpers.keys").map("n", "<leader>L", lazy.show, "Show Lazy")
+require("helpers").map("n", "<leader>L", lazy.show, "Show Lazy")
 
 -- load all our plugins
 lazy.setup("plugins")
