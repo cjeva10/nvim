@@ -1,6 +1,5 @@
 return {
     "numToStr/Comment.nvim",
-    event = { "BufReadPre", "BufNewFile" },
     config = function()
         local comment = require("Comment.api")
         local map = require("helpers").map
