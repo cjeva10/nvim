@@ -1,32 +1,29 @@
-return {
-    "nvim-treesitter/nvim-treesitter",
-    branch = 'main',
-    build = ":TSUpdate",
-    config = function()
-        local filetypes = {
-            "c",
-            "cpp",
-            "go",
-            "html",
-            "htmldjango",
-            "javascript",
-            "java",
-            "lua",
-            "python",
-            "ruby",
-            "rust",
-            "solidity",
-            "toml",
-            "typescript",
-        }
+vim.pack.add({
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+})
 
-        require("nvim-treesitter").install(filetypes)
-
-        vim.api.nvim_create_autocmd('FileType', {
-            pattern = filetypes,
-            callback = function()
-                vim.treesitter.start()
-            end,
-        })
-    end,
+local filetypes = {
+    "c",
+    "cpp",
+    "go",
+    "html",
+    "htmldjango",
+    "javascript",
+    "java",
+    "lua",
+    "python",
+    "ruby",
+    "rust",
+    "solidity",
+    "toml",
+    "typescript",
 }
+
+require("nvim-treesitter").install(filetypes)
+
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = filetypes,
+    callback = function()
+        vim.treesitter.start()
+    end,
+})

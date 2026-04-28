@@ -1,25 +1,25 @@
-return {
-    'saghen/blink.cmp',
-    version = "1.8.0",
-    opts = {
-        keymap = {
-            ["<C-e>"] = { "cancel", "fallback" },
-        },
-        completion = {
-            list = {
-                selection = {
-                    preselect = false,
-                },
+vim.pack.add({
+    { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.8") },
+})
+
+require("blink.cmp").setup({
+    keymap = {
+        ["<C-e>"] = { "cancel", "fallback" },
+    },
+    completion = {
+        list = {
+            selection = {
+                preselect = false,
             },
-            menu = {
-                draw = {
-                    columns = {
-                        { "kind_icon", gap = 1 },
-                        { "label",     "label_description", gap = 1 },
-                        { "source_id" },
-                    },
+        },
+        menu = {
+            draw = {
+                columns = {
+                    { "kind_icon", gap = 1 },
+                    { "label",     "label_description", gap = 1 },
+                    { "source_id" },
                 },
             },
         },
     },
-}
+})
