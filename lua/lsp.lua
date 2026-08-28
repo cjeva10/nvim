@@ -1,5 +1,6 @@
 local servers = {
     "clangd",
+    "forge_lsp",
     "gopls",
     "jsonls",
     "lua_ls",
@@ -8,7 +9,6 @@ local servers = {
     "ruby_lsp",
     "ruff",
     "rust_analyzer",
-    "solidity_ls_nomicfoundation",
     "ts_ls",
 }
 
