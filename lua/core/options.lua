@@ -22,7 +22,7 @@ local options = {
     shiftwidth = 4,                          -- the number of spaces inserted for each indentation
     tabstop = 4,                             -- insert 4 spaces for a tab
     -- customize cursor shape and style
-    guicursor="n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175",
+    guicursor="n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,sm:block",
     number = true,                           -- set numbered lines
     relativenumber = true,                   -- set relative numbered lines
     colorcolumn = "88",                      -- draw vertical line at 88 characters
